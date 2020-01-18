@@ -10,4 +10,5 @@ push:
 	docker push bickyeric/mawang:$(VERSION)
 
 deploy:
-	docker stack deploy --compose-file deploy/template.yml mawang
+	envsubst < deploy/template.yml > deploy.yml
+	docker stack deploy --compose-file deploy.yml mawang
