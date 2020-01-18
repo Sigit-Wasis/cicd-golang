@@ -10,4 +10,4 @@ push:
 	docker push bickyeric/mawang:$(VERSION)
 
 deploy:
-	docker stack deploy deploy/template.yml
+	docker stack deploy --compose-file deploy/template.yml
