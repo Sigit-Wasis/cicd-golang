@@ -1,3 +1,5 @@
+.PHONY: deploy
+
 build:
 	docker build -t bickyeric/mawang:latest .
 
