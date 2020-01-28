@@ -13,9 +13,22 @@ jobs:
             sudo apt install gettext
       - checkout
       - run:
+          name: Setup
+          command: |
+            go mod tidy
+      - run:
           command: |
             make build
+            docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
             make push
+
+  test:
+    docker:
+      - image: circleci/golang:latest
+    steps:
+      - checkout
+      - run: go mod tidy
+      - run: make test
 
   deploy:
     docker:
@@ -34,9 +47,18 @@ jobs:
 
 workflows:
   version: 2
-  one_and_two:
+  production:
     jobs:
-      - build
+      - test
+      - build:
+          filters:
+            branches:
+              only: master
+          requires:
+            - test
       - deploy:
+          filters:
+            branches:
+              only: master
           requires:
             - build
