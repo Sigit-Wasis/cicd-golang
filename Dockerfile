@@ -1,9 +1,5 @@
-FROM python:latest
+FROM alpine:latest
 
-COPY . /app
+COPY ./bin /usr/local/bin
 
-WORKDIR /app
-
-RUN pip install -r requirements.txt
-
-CMD ["python","app.py"]
+CMD ["api"]
