@@ -51,7 +51,6 @@ workflows:
     jobs:
       - test
       - build:
-          type: approval
           filters:
             branches:
               only: master
