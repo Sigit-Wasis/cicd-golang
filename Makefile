@@ -14,4 +14,4 @@ push:
 
 deploy:
 	envsubst < deploy/template.yml > deploy.yml
-	docker stack deploy --compose-file deploy.yml mawang
+	docker stack deploy --compose-file deploy.yml cicd-golang
