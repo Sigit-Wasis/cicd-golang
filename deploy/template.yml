@@ -4,7 +4,7 @@ services:
   api:
     image: bickyeric/mawang:${VERSION}
     ports:
-      - "7654:7654"
+      - "2001:2001"
     deploy:
       replicas: 2
       update_config:

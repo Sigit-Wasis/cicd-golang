@@ -5,7 +5,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "9f:34:3d:5c:7b:e3:c4:d3:6e:9a:fd:14:21:f0:38:c0"
+            - "af:45:67:9b:7b:16:e9:b4:7d:91:42:9f:45:d5:98:82"
       - run:
           name: Setup Known Host
           command: |
@@ -36,7 +36,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "9f:34:3d:5c:7b:e3:c4:d3:6e:9a:fd:14:21:f0:38:c0"
+            - "af:45:67:9b:7b:16:e9:b4:7d:91:42:9f:45:d5:98:82"
       - run:
           name: Setup Known Host
           command: |
