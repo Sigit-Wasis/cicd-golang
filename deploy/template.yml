@@ -2,7 +2,7 @@ version: '3'
 
 services:
   api:
-    image: bickyeric/mawang:${VERSION}
+    image: wasis/cicd-golang:${VERSION}
     ports:
       - "2001:2001"
     deploy:
